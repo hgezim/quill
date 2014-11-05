@@ -48,7 +48,8 @@ class Tooltip
     @range = null
 
   show: (reference) ->
-    @range = @quill.getSelection()
+    @range = @quill.editor.selection.range
+
     [left, top] = this._position(reference)
     [left, top] = this._limit(left, top)
     win = dom(@quill.root).window()
